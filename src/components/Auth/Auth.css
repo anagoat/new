@@ -1,11 +1,11 @@
 
 .Auth {
-    background-image: linear-gradient(to top,#c9c9c9, #8e7eeb );
+    background-image: linear-gradient(to top,#c9c9c9, #f3f3f3 );
     padding: 10px;
 }
 
 .Auth form {
-    background: linear-gradient(to right, #494949, #202020); 
+    background: linear-gradient(to right, #e9dede, #313030); 
     padding: 10px 50px;
     border-radius: 4px;
     max-width: 500px;
@@ -46,7 +46,7 @@
     box-shadow: 0 3px 4px #111;
     font-size: 1rem;
     color: rgb(0, 0, 0);
-    background-color: #c9da32;
+    background-color: #111302;
     cursor: pointer;
     user-select: none;
     transition:
@@ -55,7 +55,7 @@
         transform 50ms ease;
 }
 .Auth button:hover {
-        background-color: darken(#c9da32, 20%);
+        background-color: darken(#1c1f07, 20%);
         text-shadow: 0 0 3px #000000;
 }
 

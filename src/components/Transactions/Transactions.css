@@ -1,3 +1,41 @@
 .Transactions {
-    background-image: linear-gradient(to bottom, rgb(171, 236, 171), rgb(177, 182, 177));
+    background-color: #fff;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    padding: 10px; 
+    border: 1px solid #A9E2CC;
+  }
+  td {
+    font-size: 0.8em;
+    padding: 5px 7px;
+    border: 1px solid #A9E2CC;
+  }
+
+
+
+
+/* <div className='Transactions' >
+<table key={data.id}>
+    <thead>
+        <tr key={data.id}>
+            <th>dateTime</th>
+        </tr>
+     </thead>
+</table>
+{data ? data.map(data =>
+<table key={data.id}>
+    <tbody>
+        <tr key={data.id}>
+            <td>{data.dateTime}</td>
+        </tr>
+    </tbody>
+</table>
+) : null}
+
+</div> */

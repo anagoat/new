@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import json from '../../assets/data.json';
-// import PropTypes from 'prop-types';
+
 
 import './Transactions.css';
 
@@ -8,71 +8,54 @@ class Transactions extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           data: ''
+            data: []
         };
     }
-        
+    
     componentDidMount() {
-            let promise = new Promise(function(resolve, reject) {
-                // через 1 секунду сигнализировать, что задача выполнена с результатом "done"
-                // setTimeout(() => resolve(this.setState({ data: json })), 1000);
-                setTimeout(() => resolve(json), 1000);
-              });
-              this.setState({ data:json })
+        let promise = new Promise(function(resolve, reject) {
+            setTimeout(() => resolve(json), 100);
+            });
+        this.setState({ data:json })
     }
 
-    
-    // componentWillMount() {
-    //     this.setState({
-    //       hits: [{ _id: 1, company: 'A'}, {
-    //         _id: 2,
-    //         company: 'B'
-    //       }, {
-    //         _id: 3,
-    //         company: 'C'
-    //       }]
-    //     });
-    //   }
-    
-    //   render() {
-    //     const { hits } = this.state;
-    //     console.log(this.state.hits);
-    //     return (
-    //       <div>
-    //         {hits.map(hit =>
-    //           <div key={hit.Date}>
-    //             <span>{hit.company}</span>
-    //           </div>
-    //         )}
-    //       </div>
-    //     );
-    //   }
-    // }
-
-
-      
     render() {
         const { data } = this.state;
-        console.log('[data]', data);
-        console.log(this.state.data);
         return (
-          <div>
-             { data.map(data =>
-              <div key={data.Date}>
-                <span>{data.Recipient}</span>
-              </div>
-            ) } 
-          </div>
-        )
-      }
+        <div className='Transactions' >
+            <table key={data.id}>
+                <thead>
+                    <tr key={data.id}>
+                        <th rowSpan="1">date</th>
+                        <th rowSpan="1">time</th>
+                        <th rowSpan="2">Recipient</th>
+                        <th rowSpan="1">Sum</th>
+                        <th rowSpan="1">transactionStatus</th>
+                    </tr>
+                    </thead>
+                    {data ? data.map(data => 
+                <tbody>
+                    <tr key={data.id}>
+                        <td rowSpan="1">{new Date(data.dateTime).getDate() + '.' + new Date(data.dateTime).getMonth() + '.' + new Date(data.dateTime).getFullYear()}</td>
+                        <td rowSpan="1">{data.dateTime}</td>
+                        <td rowSpan="1">{data.Recipient}</td>
+                        <td rowSpan="1">{data.Sum}</td>
+                        <td rowSpan="1">{data.transactionStatus}</td>
+                    </tr>
+                </tbody>
+            ) : null}
+            </table>
+        </div>
+        );
+    }
 }
 
-// Transactions.propTypes = {
-    
-    // };
-    
-    export default Transactions;
+export default Transactions;
 
+
+
+// var time = 1575508169000
+// new Date({data.dateTime}).getDate() + '.' + new Date({data.dateTime}).getMonth() + '.' + new Date({data.dateTime}).getFullYear();
 
 
 // 1. Доработать валидацию на форме (требования описаны в ТЗ)
@@ -84,4 +67,4 @@ class Transactions extends Component {
 // 3. Таблицу с данными нужно сверстать самостоятельно, стили к ней тоже
 // 4. Дефолтную сортировку по дате нужно сделать тоже самостоятельно
 // 5. Нормализовать данные стаба для транзакций, в дате должна быть дата, во времени - время, формат хранения произвольный (подсказываю, что хранить и сортировать удобней будет через миллисекунды ), на интерфейс выводить например так, дата - 10.12.2019, время - 23:30
-// 6. Требуется разобраться как сделать модальные окна ( подсказываю, в react-router, который использовался в данном приложении, есть достаточно простые инструкции как их сделать ). Если разобраться не получится, то по клику на транзакцию юзер должен перейти на отдельный роут с данными по ней. В обоих вариантах это должны быть данные той транзакции по которой кликнули, тоесть туда нужно будет прокинуть данные, которые отображены сейчас в таблице.
+// 6. Требуется разобраться как сделать модальные окна ( подсказываю, в react-router, который использовался в данном приложении, есть достаточно простые инструкции как их сделать ). Если разобраться не получится, то по клику на транзакцию юзер должен перейти на отдельный роут с данными по ней. В обоих вариантах это должны быть данные той транзакции по которой кликнули, тоесть туда нужно будет прокинуть Qданные, которые отображены сейчас в таблице.
