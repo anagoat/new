@@ -22,7 +22,7 @@ const TABLE_COLUMNS = [
     }
 ];
 
-const SortableHeader = (props) => {
+const TableHeader = (props) => {
     return(
         <thead>
             <tr>
@@ -34,7 +34,9 @@ const SortableHeader = (props) => {
     )
 }
 
-const SortableBody = ({data}) => {
+const TableBody = ({data}) => {
+    sortDate(data);
+    formatDate(data);
     return(
       <tbody>
         {data.map((element, index) =>
@@ -46,11 +48,38 @@ const SortableBody = ({data}) => {
         )}
       </tbody>
     )
-  }
+}
 
-//   data.sort(function(a, b) {
-//     return a[0] - b[0];
-//   })
+const formatDate = (data) => {
+    data.map( elem => {
+        for ( let i = 0; i < elem.length; i++) {
+            // elem[0] = new Date(elem[0]).getDate() + '.' + new Date(elem[0]).getMonth() + '.' + new Date(elem[0]).getFullYear() + ' ' + myFunction(elem[0]);
+            elem[0] = new Date(elem[0]).getDate() + '.' + new Date(elem[0]).getMonth() + '.' + new Date(elem[0]).getFullYear() + ' ' + new Date(elem[0]).getHours() + ':' + new Date(elem[0]).getMinutes();
+            // нужно выводить дату в формате 07:07, но я так и не понял почему выдает ошибку "getHours is not a function" при варианте вызова выше, который закоменчен
+            // function addZero(i) {
+            //     if (i < 10) {
+            //       i = "0" + i;
+            //     }
+            //     return i;
+            //   }
+              
+            //   function myFunction(d) {
+            //       console.log('[d]', d);
+            //     let h = addZero(d.getHours());
+            //     let m = addZero(d.getMinutes());
+            //     return h + ':' + m;
+            //   }
+            break;
+        }
+    })
+
+}
+
+  const sortDate = (data) => {
+    data.sort(function(a, b) {
+      return a[0] - b[0];
+    })
+}
 
 class Transactions extends Component {
 
@@ -73,12 +102,12 @@ class Transactions extends Component {
         this.setState({ data:json })
         }
 
+
     render() {
-        console.log('[this.state.data]', this.state.data);
          return (
-            <table className='Transactions'>
-                <SortableHeader columns={this.state.columns} onClick={this.sortTableFunc}/>
-                <SortableBody data={this.state.data} />
+            <table className='Transactions'  >
+                <TableHeader columns={this.state.columns} />
+                <TableBody data={this.state.data}/>
             </table>
         );
     }

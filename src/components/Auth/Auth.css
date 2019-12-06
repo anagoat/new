@@ -5,7 +5,7 @@
 }
 
 .Auth form {
-    background: linear-gradient(to right, #e9dede, #313030); 
+    background: linear-gradient(to right, #fafafa, #b1b1b1); 
     padding: 10px 50px;
     border-radius: 4px;
     max-width: 500px;
@@ -34,7 +34,7 @@
 }
 
 .Auth .ErrorMessege {
-    color: white;
+    color: rgb(238, 0, 0);
     align-self: center;
     font-size: .8rem;
 }
@@ -45,8 +45,8 @@
     padding: 5px 30px;
     box-shadow: 0 3px 4px #111;
     font-size: 1rem;
-    color: rgb(0, 0, 0);
-    background-color: #111302;
+    color: rgb(189, 71, 71);
+    background-color: #e7f195;
     cursor: pointer;
     user-select: none;
     transition:

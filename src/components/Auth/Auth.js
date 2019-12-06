@@ -104,7 +104,7 @@ class Auth extends Component {
             return (
             <div className="Auth">
                 <form>
-                    <h1>ебаная форма</h1>
+                    <h1>Sign In</h1>
                     <label>
                         <Input className="Input"
                             onChange={this.onChangeLogin.bind(this)}
@@ -123,7 +123,7 @@ class Auth extends Component {
                         { errorPassword && <span className='ErrorMessege'>{errorPassword}</span>} 
                     </label>  
 
-                    <button type='submit' onClick={this.submit.bind(this)}>Клацни</button>    
+                    <button type='submit' onClick={this.submit.bind(this)}>submit</button>    
                 </form>  
             </div>
         );
