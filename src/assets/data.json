@@ -1,51 +1,10 @@
 [
-    {
-        "id": 1,
-        "dateTime": 1575508169000,
-        "Recipient": "Canada, Michael",
-        "Sum":1000,
-        "transactionStatus": "ok" 
-    },
-    {
-        "id": 2,
-        "dateTime": 1575511769000,
-        "Recipient": "Canada, Michael",
-        "Sum":2000,
-        "transactionStatus": "ok" 
-    },
-    {
-        "id": 3,
-        "dateTime": 1575515369000,
-        "Recipient": "Canada, Michael",
-        "Sum":3000,
-        "transactionStatus": "ok" 
-    },
-    {
-        "id": 4,
-        "dateTime": 1575518969000,
-        "Recipient": "Canada, Michael",
-        "Sum":4000,
-        "transactionStatus": "ok" 
-    },
-    {
-        "id": 5,
-        "dateTime": 1575522569000,
-        "Recipient": "Canada, Michael",
-        "Sum":5000,
-        "transactionStatus": "ok" 
-    },
-    {
-        "id": 6,
-        "dateTime": 1575526169000,
-        "Recipient": "Canada, Michael",
-        "Sum":6000,
-        "transactionStatus": "ok" 
-    },
-    {
-        "id": 7,
-        "dateTime": 1575529769000,
-        "Recipient": "Canada, Michael",
-        "Sum":7000,
-        "transactionStatus": "ok" 
-    }
+    [1575714779000, "Michael", "Canada", 1000, "ok"],
+    [1575628379000, "Michael", "Canada", 2000, "ok"],
+    [1575369179000, "Michael", "Canada", 3000, "ok"],
+    [1575455579000, "Michael", "Canada", 4000, "ok"],
+    [1575541979000, "Michael", "Canada", 5000, "ok"],
+    [1575282779000, "Michael", "Canada", 6000, "ok"],
+    [1575196379000, "Michael", "Canada", 7000, "ok"]
 ]
+
